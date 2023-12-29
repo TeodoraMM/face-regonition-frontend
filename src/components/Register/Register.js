@@ -24,7 +24,7 @@ class Register extends React.Component{
     }
 
     onSubmitRegister = () =>{
-        fetch('http://localhost:8080/register',{
+        fetch('https://mybackend-i0e5.onrender.com/register',{
             method:'post',
             headers:{'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -40,7 +40,9 @@ class Register extends React.Component{
                 this.props.onRouteChange('home');
             }
         })
-        .catch(err => console.log(err))
+        .catch(error => {
+            console.error('An error occurred:', error);
+          });
     }
 
 
